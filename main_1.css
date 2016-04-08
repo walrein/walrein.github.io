@@ -6,5 +6,8 @@
 	height:180px;
 }
 .left-v{
-	border-left: black dashed;
+	border-left: black dashed 1px;
+}
+.btm-l td{
+	border-bottom: black dashed 1px;
 }
