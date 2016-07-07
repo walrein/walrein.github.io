@@ -3,7 +3,7 @@
 <head>
 	<title>TwitterのURL文字数無制限を利用した長文ツイートWebアプリ</title>
 	<style type="text/css">
-		textarea{
+		#textarea,#reencode{
 			height: 150px;
 			width:	90%;
 		}
@@ -44,7 +44,9 @@
 <a href="#" onclick="tweeting()">
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Farm-Fresh_twitter_1.png">
 ツイートする</a>
-<p id="check">※結構な長文だとTwitterさんがホワイトアウトするのでコピペしてください。</p>
+<p id="check">※結構な長文だとTwitterさんがホワイトアウトします。</p>
+<p id="check">どうしてもツイートしたい場合は下部をコピペ</p>
+<textarea rows="1" style="width:90%" id="finalact"></textarea>
 </div>
 </body>
 <script type="text/javascript">
@@ -77,6 +79,7 @@ for(var i=0;pair[i];i++) {
 		st = document.form.textarea.value;
 		document.form.reencode.value = encodeURIComponent(st);
 		document.getElementById('debug_area').innerHTML = '長文短縮　http://walrein.github.io/t.html?text='+decodeURIComponent(document.form.reencode.value.replace(/%0A/g, "<br>"));
+		document.getElementById('finalact').value = '長文短縮　http://walrein.github.io/t.html?text=' + document.form.reencode.value;
 	}
 	uri_en();
 </script>
