@@ -14,7 +14,7 @@ for(var i=0;pair[i];i++) {
     arg[kv[0]]=kv[1];
 }
 	var output = decodeURIComponent(arg["text"]);
-	if(output == undefined){
+	if(typeof output === "undefined"){
 		output = "ERROR : Argument can not be found.";
 	}
 	document.getElementById("post").innerHTML = output;
