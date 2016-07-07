@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>test</title>
+	<title>TwitterのURL文字数無制限を利用した長文ツイートWebアプリ</title>
+	<style type="text/css">
+		textarea{
+			height: 150px;
+			width:	90%;
+		}
+		#debug_area{
+			width:	90%;
+			height: 100px;
+			font-size: 10px;
+		}
+		#check{
+			font-size:	10px;
+		}
+		#menseki{
+			color:red;
+			font-size:	12px;
+		}
+	</style>
 </head>
 <body>
-<div id="post"></div>
+<h1>TwitterのURL文字数無制限を利用した長文ツイートWebアプリ</h1>
+<div id="post">
+	<form name="form">
+	<div>
+		<p>取得した文章(下部を編集すると自動変換される)</p>
+		<textarea id="textarea" onChange="uri_en()" onKeyup="uri_en()"></textarea><br>
+	</div>
+	<div>
+		<p>エンコードした文章</p>
+		<textarea id="reencode"></textarea>
+	</div>
+	<div>
+	<p>TEST AREA</p>
+	<div id="debug_area"></div>
+	</div>
+	</form>
+</div>
+<div>
+<p id="menseki">免責：<br>本サイトの使用及び閲覧は、使用者自身のリスク (自己責任) においてなされるものであり、本サイトの作成、頒布等に関わった当社及びその関係会社ならびに関係者は、本サイト又は本コンテンツへのアクセス又は使用により発生したいかなる損害 (コンピュータやネットワークシステムに生じた損害を含み、直接損害・間接損害の別を問いません。) やその修復費用等に対して、一切の責任を負いません。</p>
+<a href="#" onclick="tweeting()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Farm-Fresh_twitter_1.png">
+ツイートする</a>
+<p id="check">※結構な長文だとTwitterさんがホワイトアウトするのでコピペしてください。</p>
+</div>
 </body>
 <script type="text/javascript">
+function tweeting(){
+	tw_url = 'http://twitter.com/home?status=';
+	tw_pre = '%E9%95%B7%E6%96%87%E7%9F%AD%E7%B8%AE%E3%80%80http%3A%2F%2Fwalrein.github.io%2Ft.html%3Ftext%3D';
+	f = tw_url + tw_pre + encodeURIComponent( document.form.reencode.value);
+	a=function(){
+		if(!window.open(f,'_blank','width=600,height=400'))location.href=f
+	}
+	if(/Firefox/.test(navigator.userAgent)){
+		setTimeout(a,0);
+	}
+	else{
+		a();
+	}
+}
 var arg = new Object;
 var pair=location.search.substring(1).split('&');
 for(var i=0;pair[i];i++) {
@@ -17,6 +72,12 @@ for(var i=0;pair[i];i++) {
 	if(output == "undefined"){
 		output = "ERROR : Argument can not be found.";
 	}
-	document.getElementById("post").innerHTML = output;
+	document.getElementById("textarea").value = output;
+	function uri_en(){
+		st = document.form.textarea.value;
+		document.form.reencode.value = encodeURIComponent(st);
+		document.getElementById('debug_area').innerHTML = '長文短縮　http://walrein.github.io/t.html?text='+decodeURIComponent(document.form.reencode.value.replace(/%0A/g, "<br>"));
+	}
+	uri_en();
 </script>
 </html>
