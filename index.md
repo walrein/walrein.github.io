@@ -2,6 +2,7 @@
 # YAML Front Matter
 layout: default
 ---
+
 # {{ site.title }}
 Hello world.  
 営業事務をする傍ら、いろんなことをしてます。  
@@ -9,6 +10,7 @@ Hello world.
 このサイトでは制作物などを記載しています。
 
 **連絡**
+
 - mail: walrein(ａ)live.jp
 - Twitter:<a href="https://twitter.com/walrein_">＠walrein_</a>
 
