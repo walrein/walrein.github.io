@@ -16,6 +16,15 @@ Hello world.
 
 - - -
 
+## Growl for Windows + limechat
+
+LimechatからGrowl for Windowsに通知するためのスクリプト
+### [導入方法](http://qiita.com/walrein/items/e3e64c9eed3e352345e8)
+
+![Growl for Windows + Limechat](/growlforwindows+limechat.png)
+
+- - -
+
 ## Cavetube Checker
 [cavetube](https://www.cavelis.net/)の放送リストを  
 個人的に見やすくしたウェブサイト
