@@ -11,6 +11,8 @@ Hello world.
 
 **連絡**
 
+お仕事・ご依頼お待ちしております。
+
 - mail: walrein(ａ)live.jp
 - Twitter:<a href="https://twitter.com/walrein_">＠walrein_</a>
 
