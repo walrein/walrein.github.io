@@ -68,3 +68,7 @@ LimechatからGrowl for Windowsに通知するためのスクリプト
 ## Qiita
 
 {% include qiita-widget.html %}
+
+### test
+
+[![Donate Bitcoin](https://img.shields.io/badge/donate-Bitcoin-orange.svg)](http://walrein.github.io/donate-bitcoin/)
